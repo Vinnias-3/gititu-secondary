@@ -22,7 +22,7 @@ function App() {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({username:u, password:p})
     }).then(r=>r.json()).then(d => {
-      if(d.token){ setToken(d.token); setLoggedIn(true); }
+      if(d.token){  setLoggedIn(true); }
       else alert('Wrong credentials');
     });
   };
