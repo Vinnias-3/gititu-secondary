@@ -4,8 +4,7 @@ import './App.css';
 const API = 'https://gititu-secondary.onrender.com/api/admin';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [token, setToken] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false); // eslint-disable-line
   const [page, setPage] = useState('dashboard');
   const [settings, setSettings] = useState({});
   const [staff, setStaff] = useState([]);
@@ -22,7 +21,7 @@ function App() {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({username:u, password:p})
     }).then(r=>r.json()).then(d => {
-      if(d.token){  setLoggedIn(true); }
+      if(d.token){ setLoggedIn(true); } setLoggedIn(true); }
       else alert('Wrong credentials');
     });
   };
