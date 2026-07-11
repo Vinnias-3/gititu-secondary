@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const API = 'http://localhost:5000/api/admin';
+const API = 'https://gititu-secondary.onrender.com/api/admin';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -18,7 +18,7 @@ function App() {
     e.preventDefault();
     const u = e.target.username.value;
     const p = e.target.password.value;
-    fetch('http://localhost:5000/api/admin/login', {
+    fetch('https://gititu-secondary.onrender.com/api/admin/login', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({username:u, password:p})
     }).then(r=>r.json()).then(d => {
@@ -28,10 +28,10 @@ function App() {
   };
 
   const loadData = () => {
-    fetch(`http://localhost:5000/api/site-settings`).then(r=>r.json()).then(setSettings);
-    fetch(`http://localhost:5000/api/staff`).then(r=>r.json()).then(setStaff);
-    fetch(`http://localhost:5000/api/news`).then(r=>r.json()).then(setNews);
-    fetch(`http://localhost:5000/api/gallery`).then(r=>r.json()).then(setGallery);
+    fetch(`https://gititu-secondary.onrender.com/api/site-settings`).then(r=>r.json()).then(setSettings);
+    fetch(`https://gititu-secondary.onrender.com/api/staff`).then(r=>r.json()).then(setStaff);
+    fetch(`https://gititu-secondary.onrender.com/api/news`).then(r=>r.json()).then(setNews);
+    fetch(`https://gititu-secondary.onrender.com/api/gallery`).then(r=>r.json()).then(setGallery);
     fetch(`${API}/messages`).then(r=>r.json()).then(setMessages);
   };
 
@@ -114,7 +114,7 @@ function SettingsPanel({ settings, loadData }) {
 
   const save = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/api/admin/site-settings`, {
+    fetch(`https://gititu-secondary.onrender.com/api/admin/site-settings`, {
       method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(form)
     }).then(()=>{alert('Settings saved!'); loadData();});
   };
