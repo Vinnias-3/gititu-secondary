@@ -49,7 +49,7 @@ function App() {
 
       <header className={scrollY > 100 ? 'header-scrolled' : ''} style={{background: scrollY > 100 ? primary : `linear-gradient(135deg, ${primary} 0%, #0a2a15 100%)`}}>
         <div className="top-bar">
-          <marquee scrollamount="3">🎓 Admissions Open 2026 | 📞 {settings.phone || '+254 700 000 000'} | 📧 {settings.email || 'info@gitituschool.ac.ke'} | Excellence Since 1985</marquee>
+          <div className="scrolling-text">🎓 Admissions Open 2026 | 📞 {settings.phone || '+254 700 000 000'} | 📧 {settings.email || 'info@gitituschool.ac.ke'} | Excellence Since 1985</div>
         </div>
         <div className="header-main">
           <div className="logo-section">
@@ -117,7 +117,7 @@ function App() {
       <footer style={{background: primary}}>
         <div className="footer-grid">
           <div><h3>{settings.school_name || 'Gititu Secondary School'}</h3><p>"{settings.motto || 'Strive for Excellence'}"</p><div className="social-links"><span>📘</span><span>🐦</span><span>📸</span><span>▶️</span></div></div>
-          <div><h4>Quick Links</h4>{['home','about','admissions','academics','staff','activities','news','gallery','contact'].map(p=><a key={p} onClick={()=>goToPage(p)}>{p.charAt(0).toUpperCase()+p.slice(1)}</a>)}</div>
+          <div><h4>Quick Links</h4>{['home','about','admissions','academics','staff','activities','news','gallery','contact'].map(p=><span key={p} className="footer-link" onClick={()=>goToPage(p)}>{p.charAt(0).toUpperCase()+p.slice(1)}</span>)}</div>
           <div><h4>Contact</h4><p>📞 {settings.phone||'+254700000000'}</p><p>📧 {settings.email||'info@gitituschool.ac.ke'}</p><p>📍 {settings.location||'Muranga County, Kenya'}</p><p>🕐 Mon-Fri: 8AM-5PM</p></div>
         </div>
         <div className="footer-bottom"><p>© 2026 {settings.school_name||'Gititu Secondary School'}. Built by <strong>TechGlobal Cybersecurity</strong></p></div>

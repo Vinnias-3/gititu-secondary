@@ -204,3 +204,7 @@ footer { color:#fff; padding:40px 15px 20px; }
   .hamburger { display:block; }
   nav button { text-align:left; padding:12px; font-size:0.9rem; border:none; border-bottom:1px solid rgba(255,255,255,0.1); border-radius:0; }
 }
+.scrolling-text { white-space:nowrap; animation:scroll 30s linear infinite; }
+@keyframes scroll { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
+.footer-link { color:rgba(255,255,255,0.7); cursor:pointer; display:block; margin:4px 0; font-size:0.85rem; }
+.footer-link:hover { color:#f4a620; }
